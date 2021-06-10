@@ -1,24 +1,71 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(num1, num2) {
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
+}
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(wordsArr) {
+
+  if (wordsArr.length === 0) {
+    return null;
+  }
+
+  let longestWord = "";
+
+  for (let word of wordsArr) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+  return longestWord;
+}
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(numArr) {
+  let total = 0;
+  for (let i=0; i < numArr.length; i++) {
+    total += numArr[i];
+  }
+  return total;
+}
 
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+function sum(someArr) {
+  let total = 0;
+  let myFalseBool = 0;
+  let myTrueBool = 1;
+  
+  for (let i=0; i<someArr.length; i++) {
+    if (typeof someArr[i] === 'object') {
+      throw "Unsupported data type sir or ma'am";
+    } else if (typeof someArr[i] === 'number') {
+      total += someArr[i];
+    } else if (typeof someArr[i] === 'string') {
+      total += someArr[i].length;
+    } else if (typeof someArr[i] === 'boolean') {
+      if (someArr[i] === true){
+        total += myTrueBool;
+      } else if (someArr[i] === false) {
+        total += myFalseBool;
+      }    
+    }
+  }
+  return total;
+}
 
 
 
